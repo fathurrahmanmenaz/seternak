@@ -14,7 +14,7 @@
     left join mitra on pemesanan.id_pemilik=mitra.id_pemilik
     left join public.user on mitra.id_pemilik=public.user.username
     where mitra.id_pemilik='$username' AND detail_pemesanan.status='4'
-    ORDER BY detail_pemesanan.no_pemesanan ASC");
+    ORDER BY detail_pemesanan.no_pemesanan DESC");
     $datas = pg_query($dbconn,$query); 
     $cek = pg_affected_rows($datas);
     if($cek > 0){
